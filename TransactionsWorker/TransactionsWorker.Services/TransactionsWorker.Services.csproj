@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="RestSharp" Version="106.6.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TransactionsWorker.Infra\TransactionsWorker.Infra.csproj" />
+    <ProjectReference Include="..\TransactionsWorker.Models\TransactionsWorker.Models.csproj" />
+  </ItemGroup>
+
+</Project>

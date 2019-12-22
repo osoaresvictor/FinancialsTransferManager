@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "TransactionsWorker": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
