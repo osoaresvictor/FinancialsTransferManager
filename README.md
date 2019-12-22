@@ -11,6 +11,6 @@ Exemplo de API REST criada com ASP.NET Core + Mongo + ELK + RabbitMQ + Docker
 - Acesse: http://localhost:8000 e verá toda a documentação Swagger. 
 
 ## Observações Gerais:
-- A aplicação leva alguns segundos para subir por completo na primmeira execução do docker-compose;
+- A aplicação leva alguns segundos para subir por completo na primeira execução do docker-compose;
 - Acesse http://localhost/api/account para ver a lista de accounts disponíveis;
 - Para ver os logs do Kibana, você precisará definir um padrão de índice pela primeira vez (Sugestão: `logstash-*` e `@timestamp` para time filter).
