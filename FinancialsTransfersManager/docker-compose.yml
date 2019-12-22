@@ -1,0 +1,106 @@
+version: '3.4'
+
+services:
+  financialstransfersmanager:
+    container_name: financialstransfersmanager
+    build:
+      context: .
+      dockerfile: FinancialsTransfersManager/Dockerfile
+    restart: always
+    ports:
+      - "8000:80"
+    networks:
+      - productionNetwork
+    environment:
+      - RabbitMQHost=rabbit
+      - RabbitMQPort=5672
+      - QueueName=transactionsToProcess
+      - MongoCollectionName=Transactions
+      - MongoConnectionString=mongodb://root:example@mongodb:27017
+      - MongoDatabaseName=TransactionRegisters
+    depends_on:
+      - mongodb
+      - rabbit
+      - elasticsearch
+
+  apiacesso:
+    container_name: apiacesso
+    image: baldini/testacesso
+    restart: always
+    ports:
+      - "80:80"
+    networks:
+      - productionNetwork
+
+  transactionsworker:
+    container_name: transactionsworker
+    build:
+      dockerfile: ./TransactionsWorker/Dockerfile
+      context: ../TransactionsWorker
+    restart: always
+    networks:
+      - productionNetwork
+    environment:
+      - RabbitMQHost=rabbit
+      - RabbitMQPort=5672
+      - QueueName=transactionsToProcess
+      - AcessoApi=http://apiacesso:80
+      - MongoCollectionName=Transactions
+      - MongoConnectionString=mongodb://root:example@mongodb:27017
+      - MongoDatabaseName=TransactionRegisters
+    depends_on:
+      - apiacesso
+      - rabbit
+      - mongodb
+
+  mongodb:
+    container_name: mongo
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    ports:
+      - "27017:27017"
+    networks:
+      - productionNetwork
+
+  rabbit:
+    container_name: rabbit
+    image: rabbitmq
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    networks:
+      - productionNetwork
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.4
+    container_name: elasticsearch
+    restart: always
+    ports:
+      - "9200:9200"
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+    networks:
+    - productionNetwork
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.2.4
+    container_name: kibana
+    restart: always
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
+    networks:
+      - productionNetwork
+
+volumes:
+  elasticsearch-data:
+
+networks:
+  productionNetwork:
+    driver: bridge
