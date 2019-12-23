@@ -9,11 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialsTransfersManager.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialsTransfersManager.Infra", "FinancialsTransfersManager.Infra\FinancialsTransfersManager.Infra.csproj", "{646566EC-35C4-4E76-8159-D2816A73287C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialsTransfersManager.Services", "FinancialsTransfersManager.Core\FinancialsTransfersManager.Services.csproj", "{BF1FD09A-1A80-4392-8EDC-31C843A40C8C}"
-EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{62DB6846-6595-4B9B-896D-C61CA4BEB2DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialsTransfersManager.Tests", "FinancialsTransfersManager.Tests\FinancialsTransfersManager.Tests.csproj", "{2F4E6D12-E6CF-42C2-8BF0-852632DA8819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialsTransfersManager.Tests", "FinancialsTransfersManager.Tests\FinancialsTransfersManager.Tests.csproj", "{2F4E6D12-E6CF-42C2-8BF0-852632DA8819}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialsTransferManager.Services", "FinancialsTransferManager.Services\FinancialsTransferManager.Services.csproj", "{8B611629-58C3-48DE-BC1B-4678DAEDB650}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{646566EC-35C4-4E76-8159-D2816A73287C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{646566EC-35C4-4E76-8159-D2816A73287C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{646566EC-35C4-4E76-8159-D2816A73287C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF1FD09A-1A80-4392-8EDC-31C843A40C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF1FD09A-1A80-4392-8EDC-31C843A40C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF1FD09A-1A80-4392-8EDC-31C843A40C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF1FD09A-1A80-4392-8EDC-31C843A40C8C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{62DB6846-6595-4B9B-896D-C61CA4BEB2DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{62DB6846-6595-4B9B-896D-C61CA4BEB2DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{62DB6846-6595-4B9B-896D-C61CA4BEB2DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{2F4E6D12-E6CF-42C2-8BF0-852632DA8819}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F4E6D12-E6CF-42C2-8BF0-852632DA8819}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F4E6D12-E6CF-42C2-8BF0-852632DA8819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B611629-58C3-48DE-BC1B-4678DAEDB650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B611629-58C3-48DE-BC1B-4678DAEDB650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B611629-58C3-48DE-BC1B-4678DAEDB650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B611629-58C3-48DE-BC1B-4678DAEDB650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

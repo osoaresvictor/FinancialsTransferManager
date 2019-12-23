@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FinancialsTransfersManager.Core\FinancialsTransfersManager.Services.csproj" />
+    <ProjectReference Include="..\FinancialsTransferManager.Services\FinancialsTransferManager.Services.csproj" />
     <ProjectReference Include="..\FinancialsTransfersManager.Infra\FinancialsTransfersManager.Infra.csproj" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -15,8 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FinancialsTransfersManager.Core\FinancialsTransfersManager.Services.csproj" />
-    <ProjectReference Include="..\FinancialsTransfersManager\FinancialsTransfersManager.csproj" />
+    <ProjectReference Include="..\FinancialsTransferManager.Services\FinancialsTransferManager.Services.csproj" />
+    <ProjectReference Include="..\FinancialsTransfersManager.Infra\FinancialsTransfersManager.Infra.csproj" />
+    <ProjectReference Include="..\FinancialsTransfersManager.Models\FinancialsTransfersManager.Models.csproj" />
   </ItemGroup>
 
 </Project>
